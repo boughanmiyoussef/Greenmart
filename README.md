@@ -1,4 +1,3 @@
-Here's your README file formatted for clarity, with the Git commands placed between quotes as requested:
 
 ---
 
