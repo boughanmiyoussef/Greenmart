@@ -11,7 +11,7 @@ GreenMart is an online marketplace where users can buy and sell plants. The syst
 - **Seller**: Can add, manage, and sell plants.
 - **Admin**: Oversees user and product management and handles platform administration.
 
-This project is built using Node.js, Express.js, MySQL, and HTML/CSS for the front-end.
+This project is built using Node.js, Express.js, MySQL, and HTML/CSS for the front-end
 
 ## Table of Contents
 
