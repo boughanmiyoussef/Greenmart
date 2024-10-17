@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS greenmart;
 USE greenmart;
 
--- Create the users table
+-- User
 CREATE TABLE IF NOT EXISTS users (
     userID VARCHAR(255) PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
--- Create the plants table
+-- Plants
 CREATE TABLE IF NOT EXISTS plants (
     plantID VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS plants (
     FOREIGN KEY (sellerID) REFERENCES users(userID)
 );
 
--- Create the orders table
+-- Orders
 CREATE TABLE IF NOT EXISTS orders (
     orderID VARCHAR(255) PRIMARY KEY,
     buyerID VARCHAR(255),
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (plantID) REFERENCES plants(plantID)
 );
 
--- Create the blogs table
+-- Blogs
 CREATE TABLE IF NOT EXISTS blogs (
     blogID VARCHAR(255) PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -57,13 +57,16 @@ CREATE TABLE IF NOT EXISTS blogs (
     FOREIGN KEY (authorID) REFERENCES users(userID)
 );
 
--- Create the comments table
+-- Comments
 CREATE TABLE IF NOT EXISTS comments (
     commentID VARCHAR(255) PRIMARY KEY,
     blogID VARCHAR(255),
+    userID VARCHAR(255), 
     content TEXT,
     dateposted DATE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (blogID) REFERENCES blogs(blogID)
+    FOREIGN KEY (blogID) REFERENCES blogs(blogID),
+    FOREIGN KEY (userID) REFERENCES users(userID)
 );
+
