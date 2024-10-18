@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS plants (
     plantID VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
+    stockQuantity INT NOT NULL,
     category VARCHAR(255),
     price FLOAT NOT NULL,
     imageURL VARCHAR(255),
