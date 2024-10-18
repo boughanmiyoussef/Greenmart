@@ -71,3 +71,13 @@ CREATE TABLE IF NOT EXISTS comments (
     FOREIGN KEY (userID) REFERENCES users(userID)
 );
 
+-- Order_items
+CREATE TABLE IF NOT EXISTS order_items (
+    orderItemID VARCHAR(255) PRIMARY KEY,
+    orderID VARCHAR(255),
+    productID VARCHAR(255),
+    quantity INT NOT NULL,
+    price FLOAT NOT NULL,
+    FOREIGN KEY (orderID) REFERENCES orders(orderID),
+    FOREIGN KEY (productID) REFERENCES plants(plantID)
+);+
