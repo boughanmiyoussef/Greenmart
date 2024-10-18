@@ -80,4 +80,4 @@ CREATE TABLE IF NOT EXISTS order_items (
     price FLOAT NOT NULL,
     FOREIGN KEY (orderID) REFERENCES orders(orderID),
     FOREIGN KEY (productID) REFERENCES plants(plantID)
-);+
+);
