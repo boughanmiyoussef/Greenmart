@@ -1,11 +1,11 @@
 const { v4: uuidv4 } = require('uuid');
 
 class Order {
-    constructor(userID, productID, quantity, orderDate, status) {
+    constructor(userID, productID, stockQuantity, orderDate, status) {
         this.orderID = uuidv4();
         this.userID = userID;
         this.productID = productID;
-        this.quantity = quantity;
+        this.stockQuantity = stockQuantity;
         this.orderDate = orderDate;
         this.status = status; // Status of the order (e.g., 'pending', 'completed', 'canceled')
         this.createdAt = new Date();
