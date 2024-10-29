@@ -1,7 +1,5 @@
-// controllers/orderItemController.js
 const OrderItem = require('../models/order_items');
 
-// Add item to order
 exports.addItemToOrder = async (req, res) => {
     try {
         const { orderID, plantID, quantity, price } = req.body;
